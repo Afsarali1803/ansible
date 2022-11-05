@@ -20,6 +20,5 @@
     - name: Print CLI-URL through CLI
       ansible.builtin.debug:
           msg: "{{ CLI-URL }}"
-      vars:
-      CLI-URL: 
+      
       
