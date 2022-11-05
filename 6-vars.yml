@@ -1,7 +1,7 @@
 - name: Demo on variables   
   hosts: all       
   vars: 
-    URL: play.google.com
+   
   vars_files:
     - vars_files_abc
   tasks:
