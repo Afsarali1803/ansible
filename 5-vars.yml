@@ -19,8 +19,8 @@
     
     - name: Print CLIURL through CLI
       ansible.builtin.debug:
-          msg: "{{ CLIURL }}"
+          msg: "{{ URL }}"
       vars:
-        CLIURL: anas.google.com
+        URL: anas.google.com
       
       
