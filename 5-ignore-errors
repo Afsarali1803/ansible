@@ -1,0 +1,11 @@
+- name: Ingnore errors   
+  hosts: all
+  tasks: 
+   - name: check tomcat is running or not
+     shell: ps -ef | grep java | grep -v grep
+     register: OUT
+     ignore_errors: yes
+
+   - name: starting tomcat
+     debug:
+       msg: starting tomcat  
