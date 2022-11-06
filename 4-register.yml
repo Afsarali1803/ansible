@@ -1,0 +1,6 @@
+- name: Demo on using shell module    
+  hosts: all
+  tasks: 
+   - name: Running a shell commands
+     shell: uptime
+     msg: The uptime is {{ uptime }}
