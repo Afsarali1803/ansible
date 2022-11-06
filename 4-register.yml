@@ -2,5 +2,5 @@
   hosts: all
   tasks: 
    - name: Running a shell commands
-     shell: uptime
-     msg: The uptime is {{ uptime }}
+     ansible.builtin.shell: uptime
+     register: The uptime is {{ uptime }}
