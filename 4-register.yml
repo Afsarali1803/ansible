@@ -8,3 +8,7 @@
    - name : Display uptime
      debug: 
        msg:  The display uptime {{ OUT }}
+
+   - name : Display stdin
+     debug: 
+       msg:  The display uptime {{ OUT.stdout }}
