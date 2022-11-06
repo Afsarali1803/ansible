@@ -7,4 +7,4 @@
 
    - name : Display uptime
      debug: 
-       msg: {{ OUT }}
+       msg: "{{ OUT }}"
