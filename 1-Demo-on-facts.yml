@@ -2,5 +2,5 @@
   hosts: all
   tasks:
     - name: Print env variable
-      ansible.builtin.debug:
+      debug:
         msg: The value is {{ ansible_mounts}}
