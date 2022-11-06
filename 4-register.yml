@@ -4,3 +4,7 @@
    - name: Running a shell commands
      shell: uptime
      register: OUT
+
+   - name : Display uptime
+     debug: 
+       msg: {{ OUT }}
