@@ -1,5 +1,5 @@
 - name: Ansible tags
-  hosts: all 
+  hosts: dev 
   tasks: 
     - name: Performing webserver installation 
       ansible.builtin.debug:
