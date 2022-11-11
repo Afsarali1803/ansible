@@ -26,3 +26,13 @@
     dest: /tmp 
     remote_src: yes
       # If the source is not local , you need to mention remote soruce as yes. 
+
+- name: Run mongodb file for catalogue
+  community.mongodb.mongodb_shell:
+    file: "/tmp/mongodb-main/catalogue.js"
+    idempotent: yes
+
+- name: Run mongodb file for user
+  community.mongodb.mongodb_shell:
+    file: "/tmp/mongodb-main/users.js"
+    idempotent: yes
