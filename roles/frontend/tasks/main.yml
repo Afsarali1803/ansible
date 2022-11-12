@@ -35,5 +35,5 @@
   ansible.builtin.systemd:
     state: restarted
     daemon_reload: yes
-    name: "{{component}}" 
+    name: nginx 
     enabled: yes
