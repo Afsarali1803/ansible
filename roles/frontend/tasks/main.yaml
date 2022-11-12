@@ -3,12 +3,17 @@
     name: nginx
     state: present
 
-- name: Download and extract frontend 
-  ansible.builtin.unarchive:
-    src: https://github.com/stans-robot-project/frontend/archive/main.zip
-    dest: /tmp 
-    remote_src: yes
-      # If the source is not local , you need to mention remote soruce as yes. 
+#- name: Download and extract frontend 
+#  ansible.builtin.unarchive:
+#    src: https://github.com/stans-robot-project/frontend/archive/main.zip
+#    dest: /tmp 
+#    remote_src: yes
+#      # If the source is not local , you need to mention remote soruce as yes. 
+
+- name: Download and archive file from mongodb
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: download
 
 - name: Recursively remove directory
   ansible.builtin.file:
