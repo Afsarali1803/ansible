@@ -14,10 +14,10 @@
     regexp: '127.0.0.1'
     replace: '0.0.0.0' 
 
-- name: Start MongoDB
+- name: Starting MongoDB 
   ansible.builtin.service:
-    name: Mongod
-    state: restarted
+    name: mongod 
+    state: started
     enabled: yes
 
 #- name: Download and extract frontend 
