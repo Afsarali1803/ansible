@@ -39,8 +39,8 @@
     idempotent: yes
   loop:
    - catalogue
-   - user
-
+   - users
+   
 #- name: Run mongodb file for user
 #  community.mongodb.mongodb_shell:
 #    file: "/tmp/mongodb-main/users.js"
