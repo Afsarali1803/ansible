@@ -1,50 +1,54 @@
-- name: Configure the Yum Repos 
-  ansible.builtin.shell: curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash -
-
-- name: Install NodeJS 
-  ansible.builtin.yum:
-    name: "{{item}}"
-    state: present  
-  loop: 
-    - nodejs 
-    - gcc-c++  
-
-- name: Adding Application User 
-  ansible.builtin.user:
-    name: roboshop 
-    comment: roboshop project application user 
-   
-
-- name: Download and archive file from mongodb
+- name: Config NodeJs 
   ansible.builtin.include_role:
     name: common
-    tasks_from: download
+    tasks_from: nodejs
 
-- name: Deleting Old Content
-  ansible.builtin.file:
-    path: /home/roboshop/{{component}}
-    state: absent  
+#- name: Configure the Yum Repos 
+#  ansible.builtin.shell: curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash -
 
-- name: Copy file to destination 
-  ansible.builtin.copy:
-    src:  /tmp/{{component}}-main/
-    dest: /home/roboshop/{{component}}/
-    remote_src: yes
-  become_user: roboshop 
+#- name: Install NodeJS 
+#  ansible.builtin.yum:
+#    name: "{{item}}"
+#    state: present  
+#  loop: 
+#    - nodejs 
+#    - gcc-c++  
 
-- name: Install node.js package.
-  community.general.npm:
-    path: /home/roboshop/{{component}}/
+#- name: Adding Application User 
+#  ansible.builtin.user:
+#    name: roboshop 
+#    comment: roboshop project application user 
+   
 
-- name: Copy system config file 
-  ansible.builtin.copy:
-    src: systemd.service  
-    dest: /etc/systemd/system/{{component}}.service
+# - name: Download and archive file from mongodb
+#  ansible.builtin.include_role:
+#    name: common
+#    tasks_from: download
 
-- name: Restarting Service 
-  ansible.builtin.systemd:
-    state: restarted
-    daemon_reload: yes
-    name: "{{component}}" 
-    enabled: yes
-    
+#- name: Deleting Old Content
+#  ansible.builtin.file:
+#    path: /home/roboshop/{{component}}
+#    state: absent  
+
+# - name: Copy file to destination 
+#  ansible.builtin.copy:
+#    src:  /tmp/{{component}}-main/
+#    dest: /home/roboshop/{{component}}/
+#    remote_src: yes
+#  become_user: roboshop 
+
+#- name: Install node.js package.
+#  community.general.npm:
+#    path: /home/roboshop/{{component}}/
+
+#- name: Copy system config file 
+#  ansible.builtin.copy:
+#    src: systemd.service  
+#    dest: /etc/systemd/system/{{component}}.service
+
+#- name: Restarting Service 
+#  ansible.builtin.systemd:
+#    state: restarted
+#    daemon_reload: yes
+#    name: "{{component}}" 
+#    enabled: yes
