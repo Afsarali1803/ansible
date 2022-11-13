@@ -13,7 +13,6 @@
   ansible.builtin.user:
     name: common 
     tasks_from: create-user
-   
 
 - name: Download and archive file from mongodb
   ansible.builtin.include_role:
