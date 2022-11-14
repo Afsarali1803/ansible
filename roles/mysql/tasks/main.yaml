@@ -15,3 +15,11 @@
     name: mysqld 
     state: started
     enabled: yes
+
+# Whenever this is a failure, I'd like to reset the password
+- name: Get MySQL version with non-default credentials
+  community.mysql.mysql_info:
+    login_user: root 
+    login_password: RoboShop@1
+  ignore_errors: yes 
+  register: stat
