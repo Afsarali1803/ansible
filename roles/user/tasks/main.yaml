@@ -27,28 +27,28 @@
 
 #- name: Deleting Old Content
 #  ansible.builtin.file:
-#    path: /home/roboshop/{{component}}
+#    path: /home/roboshop/{{COMPONENT}}
 #    state: absent  
 
 # - name: Copy file to destination 
 #  ansible.builtin.copy:
-#    src:  /tmp/{{component}}-main/
-#    dest: /home/roboshop/{{component}}/
+#    src:  /tmp/{{COMPONENT}}-main/
+#    dest: /home/roboshop/{{COMPONENT}}/
 #    remote_src: yes
 #  become_user: roboshop 
 
 #- name: Install node.js package.
 #  community.general.npm:
-#    path: /home/roboshop/{{component}}/
+#    path: /home/roboshop/{{COMPONENT}}/
 
 #- name: Copy system config file 
 #  ansible.builtin.copy:
 #    src: systemd.service  
-#    dest: /etc/systemd/system/{{component}}.service
+#    dest: /etc/systemd/system/{{COMPONENT}}.service
 
 #- name: Restarting Service 
 #  ansible.builtin.systemd:
 #    state: restarted
 #    daemon_reload: yes
-#    name: "{{component}}" 
+#    name: "{{COMPONENT}}" 
 #    enabled: yes

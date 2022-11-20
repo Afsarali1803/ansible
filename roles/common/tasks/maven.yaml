@@ -15,20 +15,20 @@
 
 - name: Deleting Old Content
   ansible.builtin.file:
-    path: /home/roboshop/{{component}}
+    path: /home/roboshop/{{COMPONENT}}
     state: absent  
 
 - name: Copy file to destination 
   ansible.builtin.copy:
-    src:  /tmp/{{component}}-main/
-    dest: /home/roboshop/{{component}}/
+    src:  /tmp/{{COMPONENT}}-main/
+    dest: /home/roboshop/{{COMPONENT}}/
     remote_src: yes
   become_user: roboshop 
 
 - name: Creating artifact
-  ansible.builtin.shell:  mvn clean package && mv target/{{component}}-1.0.jar {{component}}.jar
+  ansible.builtin.shell:  mvn clean package && mv target/{{COMPONENT}}-1.0.jar {{COMPONENT}}.jar
   args:
-    chdir: /home/roboshop/{{component}} 
+    chdir: /home/roboshop/{{COMPONENT}} 
   become_user: roboshop 
 
 - name: Configuring the service 

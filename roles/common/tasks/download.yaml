@@ -1,6 +1,6 @@
-- name: Download and extract {{component}}
+- name: Download and extract {{COMPONENT}}
   ansible.builtin.unarchive:
-    src: https://github.com/stans-robot-project/{{component}}/archive/main.zip
+    src: https://github.com/stans-robot-project/{{COMPONENT}}/archive/main.zip
     dest: /tmp 
     remote_src: yes
       # If the source is not local , you need to mention remote soruce as yes. 
