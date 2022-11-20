@@ -40,6 +40,11 @@
   loop:
    - catalogue
    - users
+
+- name: Doing set-hostname 
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: set-hostname
    
 #- name: Run mongodb file for user
 #  community.mongodb.mongodb_shell:
