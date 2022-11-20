@@ -5,7 +5,7 @@
 172.31.95.243
 
 [mongodb]
-172.31.90.8
+mongodb.roboshop.internal
 
 [redis]
 172.31.95.162
