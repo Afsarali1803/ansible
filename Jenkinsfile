@@ -7,23 +7,16 @@ pipeline {
 
     //            maven 'maven-3.5.0' 
     //}
-        stages {
-            stage ('Hello world') {
+    stages {
+            stage('Lint check') {
                 steps {
-                sh " echo Hello world "
+                    sh env
+                    sh 'this stage should run in feature branch'
+                    sh 'echo LINK CHECKS COMPLETED'
                 }
             }
-
-        }
+    }
 }
-    //stages {
-    //        stage('Lint check') {
-    //            steps {
-    //                sh env
-    //                sh 'this stage should run in feature branch'
-    //                sh 'echo LINK CHECKS COMPLETED'
-    //            }
-    //        }
 
             //stage ('Perform ansible dry run') {
             //    steps {
