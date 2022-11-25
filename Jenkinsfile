@@ -2,9 +2,12 @@ pipeline {
     agent any
     options {
             ansiColor('xterm')
+            sh "echo sucess options"
     }
     tools {
+
             maven 'maven-3.5.0' 
+             sh "echo sucess tools"
         }
     stages {
             stage ('Lint check') {
