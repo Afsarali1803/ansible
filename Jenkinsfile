@@ -7,6 +7,7 @@ pipeline {
 
             maven 'maven-3.5.0' 
         }
+}
     //stages {
     //        stage('Lint check') {
     //            steps {
@@ -28,7 +29,7 @@ pipeline {
             //        sh "echo Performing Deployment"
             //    }
            // }
-        }
+        
         
 
 
