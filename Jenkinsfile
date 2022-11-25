@@ -11,7 +11,6 @@ pipeline {
             stage('Lint check') {
                 steps {
                     sh 'this stage should run in feature branch'
-                    sh 'LINK CHECKS COMPLETED'
                 }
             }
     }
