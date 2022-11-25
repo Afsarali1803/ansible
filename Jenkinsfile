@@ -2,7 +2,7 @@ pipeline {
     agent any
     options {
             ansiColor('xterm')
-            sh "sucess options"
+            sh "echo One"
     }
     tools {
 
