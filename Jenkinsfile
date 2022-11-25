@@ -3,10 +3,14 @@ pipeline {
     options {
             ansiColor('xterm')
     }
+    tools {
+        maven 'maven-3.5.0' 
+    }
     stages {
         stage('Lint check') {
             steps {
                 sh " echo stage should run in feature branch "
+                sh " echo this link check"
             }
         }
     }
