@@ -15,19 +15,19 @@ pipeline {
                     sh 'echo LINK CHECKS COMPLETED'
                 }
             }
-            
-            stage ('Perform ansible dry run') {
-                steps {
-                    sh 'This stage should run only in the PR'
-                    //sh 'ansible-playbook robot-dryrun.yaml -e COMPONENT=mongodb -e ENV=dev -e ansible_name=centos -e ansible_password=DevOps321'
-                }
-            }
-            stage ('Performing merge') {
-                steps {
-                    sh "echo Performing merge"
-                    sh "echo Performing Deployment"
-                }
-            }
+
+            //stage ('Perform ansible dry run') {
+            //    steps {
+            //        sh 'This stage should run only in the PR'
+            //        sh 'ansible-playbook robot-dryrun.yaml -e COMPONENT=mongodb -e ENV=dev -e ansible_name=centos -e ansible_password=DevOps321'
+            //    }
+            //}
+            //stage ('Performing merge') {
+            //    steps {
+            //        sh "echo Performing merge"
+            //        sh "echo Performing Deployment"
+            //    }
+           // }
         }
         
     }
