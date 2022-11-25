@@ -2,12 +2,10 @@ pipeline {
     agent any
     options {
             ansiColor('xterm')
-            sh "echo One"
-    }
+             
     tools {
 
             maven 'maven-3.5.0' 
-             sh "sucess tools"
         }
     stages {
             stage ('Lint check') {
@@ -32,6 +30,8 @@ pipeline {
         }
         
     }
+}
+
 
     
 
