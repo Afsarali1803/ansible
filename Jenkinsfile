@@ -3,6 +3,9 @@ pipeline {
     options {
             ansiColor('xterm')
     }
+    environment {
+        SSH_CRED = credentials('SSH-CRED')
+    }
     tools {
         maven 'maven-3.5.0' 
     }
@@ -24,8 +27,7 @@ pipeline {
                 sh "echo Performing merge"
                 sh "echo Performing Deployment"
             }
-        }
-        
+        }    
 
     }
 }
