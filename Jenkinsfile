@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Lint check') {
             steps {
-                sh " this stage should run in feature branch "
+                sh " stage should run in feature branch "
             }
         }
     }
