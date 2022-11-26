@@ -36,6 +36,9 @@ pipeline {
     }
 }
 
+            //stage
+            //afsar
+
             //stage ('Perform ansible dry run') {
             //    steps {
             //        sh 'This stage should run only in the PR'
