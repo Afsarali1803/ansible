@@ -19,12 +19,14 @@ pipeline {
             }
         }
         stage ('Perform ansible dry run') {
+            when {branch pattern: "PR-.*",comparator: "REGEXP"}
             steps {
                 sh " echo This stage should run only in the PR "
                 sh "ansible-playbook robot-dryrun.yaml -e COMPONENT=mongodb -e ENV=dev -e ansible_name=centos -e ansible_password=DevOps321 "
             }
         }
         stage ('Performing merge') {
+            when { branch 'main' }
             steps {
                 sh "echo Performing merge"
                 sh "echo Performing Deployment"
