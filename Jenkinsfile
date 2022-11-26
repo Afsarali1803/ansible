@@ -11,7 +11,9 @@ pipeline {
     }
     stages {
         stage('Lint check') {
+            when {branch pattern: "feature.*",comparator: "REGEXP"}
             steps {
+                sh "env"
                 sh " echo stage should run in feature branch "
                 sh " echo this link check"
             }
@@ -19,7 +21,7 @@ pipeline {
         stage ('Perform ansible dry run') {
             steps {
                 sh " echo This stage should run only in the PR "
-                sh " ansible-playbook robot-dryrun.yaml -e COMPONENT=mongodb -e ENV=dev -e ansible_name=centos -e ansible_password=DevOps321 "
+                sh "ansible-playbook robot-dryrun.yaml -e COMPONENT=mongodb -e ENV=dev -e ansible_name=centos -e ansible_password=DevOps321 "
             }
         }
         stage ('Performing merge') {
